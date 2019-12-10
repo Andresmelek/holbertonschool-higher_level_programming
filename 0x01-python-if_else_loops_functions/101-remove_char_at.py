@@ -6,6 +6,6 @@ def remove_char_at(str, n):
         if index == n:
             index += 1
         else:
-            str1 = chr(ord(i))
+            str1 += chr(ord(i))
             index += 1
     return str1
