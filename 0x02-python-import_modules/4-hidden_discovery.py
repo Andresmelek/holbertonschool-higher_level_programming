@@ -3,7 +3,7 @@ import hidden_4
 if __name__ == "__main__":
     names = dir(hidden_4)
     for i in names:
-        if i[0] != '_':
-            print('{}'.format(names))
-        else:
+        if i[0] == '_':
             continue
+        else:
+            print('{}'.format(names))
