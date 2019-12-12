@@ -5,3 +5,5 @@ if __name__ == "__main__":
     for i in names:
         if i[0] != '_':
             print('{}'.format(names))
+        else:
+            continue
