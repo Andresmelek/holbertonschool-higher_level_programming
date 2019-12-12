@@ -1,2 +1,1 @@
-# holbertonschool-higher_level_programming
-Oriented object programming
+# HIGH LEVEL PROGRAMMING
