@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	int buff[1000];
 
 	if (head == NULL || *head == NULL)
-		return (0);
+		return (1);
 
 	aux = *head;
 	while(aux)
