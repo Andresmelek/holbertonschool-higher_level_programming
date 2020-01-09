@@ -9,8 +9,8 @@ class Square:
         size (int): private instance attribute."""
 
     def __init__(self, size=0):
-        var = 0
         try:
+            var = 0
             var += size
             if size < 0:
                 raise ValueError("{}".format("size must be >= 0"))
