@@ -5,8 +5,7 @@ class Square:
         The __init__ creates a square with one attribute.
          Attributes:
         size (int): private instance attribute."""
-
-    def  __init__(self, size=0, position=(0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         if type(size) is not int:
             raise TypeError("{}".format("size must be an integer"))
         elif size < 0:
@@ -16,7 +15,8 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         if len(position) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if not isinstance(position[0], int) or not isinstance(position[1], int):
+        if (not isinstance(position[0], int) or
+            not isinstance(position[1], int)):
             raise TypeError("position must be a tuple of 2 positive integers")
         if position[0] < 0 or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
