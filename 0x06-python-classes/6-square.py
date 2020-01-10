@@ -7,7 +7,19 @@ class Square:
         size (int): private instance attribute."""
 
     def  __init__(self, size=0, position=(0, 0)):
+        if type(size) is not int:
+            raise TypeError("{}".format("size must be an integer"))
+        elif size < 0:
+            raise ValueError("{}".format("size must be >= 0"))
         self.__size = size
+        if not isinstance(position, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(position[0], int) or not isinstance(position[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     def area(self):
@@ -44,10 +56,11 @@ class Square:
     def my_print(self):
         if self.__size == 0:
             print()
-        for i in range(self.__position[1]):
-            if self.__position[1] > 0:
-                print()
-        for i in range(self.__size):
-            for j in range(self.__position[0]):
-                print(" ", end="")
-            print("#" * self.__size)
+        else:
+            for i in range(self.__position[1]):
+                if self.__position[1] > 0:
+                    print()
+            for x in range(self.__size):
+                for j in range(self.__position[0]):
+                    print(" ", end="")
+                print("#" * self.__size)
