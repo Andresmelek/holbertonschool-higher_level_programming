@@ -1,4 +1,4 @@
->>> matrix_divided = __import__('2-matrix_divided.txt').matrix.divided
+x_divided = __import__('2-matrix_divided.txt').matrix.divided
 
 Test case #0: A test case without parameters
     >>> matrix_divided()
@@ -124,3 +124,4 @@ div must be a number and >0
     Traceback (most recent call last):
         ...
     TypeError: div must be a number
+
