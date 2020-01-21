@@ -48,3 +48,17 @@ Changing values
 >>> my_list[1] = -6
 >>> print(my_list)
 [-2, -6, 2, 9, 1]
+
+====================
+Print an empty list
+====================
+Print a empty list
+>>> n_list = MyList()
+>>> n_list.print_sorted()
+[]
+
+=============
+Type of list
+=============
+>>> type(my_list)
+<class '1-my_list.MyList'>
