@@ -24,3 +24,13 @@ class Square(Rectangle):
         """ str method """
         return ("[Square] ({}) {}/{} - {}".format
                 (self.id, self.x, self.y, self.width))
+
+    def update(self, *args, **kwargs):
+        """ updated the square class """
+        list_a = ['id', 'size', 'x', 'y']
+        if args is not None and len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, list_a[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
