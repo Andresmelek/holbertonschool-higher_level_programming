@@ -2,6 +2,7 @@
 """ Base class """
 import json
 import os
+import csv
 
 
 class Base():
@@ -70,3 +71,40 @@ class Base():
                 return list_i
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes to Csv """
+        flag = 0
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', encoding='utf-8') as file:
+            if cls.__name__ == "Rectangle":
+                value_dict = {"width": "width", "height": "height",
+                              "x": "x", "y": "y", "id": "id"}
+                listt = ["width", "height", "x", "y", "id"]
+            else:
+                value_dict = {"size": "size", "x": "x", "y": "y", "id": "id"}
+                listt = ["size", "x", "y", "id"]
+
+            files = csv.DictWriter(file, fieldnames=listt)
+            for instance in list_objs:
+                if flag == 0:
+                    files.writerow(value_dict)
+                    flag += 1
+                files.writerow(instance.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes csv """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'r', encoding='utf-8') as file:
+            i_dict = {}
+            i_array = []
+
+            csv_file = csv.DictReader(file)
+            for instance in csv_file:
+                for key, value in instance.items():
+                    i_dict[key] = int(value)
+                inst = cls.create(**i_dict)
+                i_array.append(inst)
+            return i_array
