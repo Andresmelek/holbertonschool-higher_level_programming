@@ -24,8 +24,6 @@ class Rectangle(Base):
             raise TypeError('width must be an integer')
         elif value <= 0:
             raise ValueError('width must be > 0')
-        else:
-            self.__width = value
 
     @property
     def height(self):
@@ -44,12 +42,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ X getter """
+        """ x getter """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """ X setter """
+        """ x setter """
         if type(value) is not int:
             raise TypeError('x must be an integer')
         elif value < 0:
@@ -64,43 +62,10 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """ Y setter """
+        """ y setter """
         if type(value) is not int:
             raise TypeError('y must be an integer')
         elif value < 0:
             raise ValueError('y must be >= 0')
         else:
             self.__y = value
-
-    def area(self):
-        """ Returns the rectangle's area """
-        return self.__width * self.__height
-
-    def display(self):
-        """ Draws a rectangle """
-        for e in range(self.__y):
-            print()
-        for i in range(self.__height):
-            print(' ' * self.__x, end='')
-            print('#' * self.__width)
-
-    def __str__(self):
-        """ string method """
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format
-               (self.id, self.__x, self.__y, self.__width, self.__height))
-
-    def update(self, *args, **kwargs):
-        """ updates the rectangle class """
-        list_at = ['id', 'width', 'height', 'x', 'y']
-        if args is not None and len(args) != 0:
-            for i in range(len(args)):
-                setattr(self, list_at[i], args[i])
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-
-    def to_dictionary(self):
-        """ Returns a dictionary representation """
-        keys = ['id', 'width', 'height', 'x', 'y']
-        values = [self.id, self.__width, self.__height, self.__x, self.__y]
-        return dict(zip(keys, values))
