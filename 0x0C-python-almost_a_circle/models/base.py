@@ -8,6 +8,7 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Class base"""
         if id is not None:
             self.id = id
         else:
@@ -16,6 +17,7 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Dictionary to JSON string """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
@@ -23,6 +25,7 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """writes the JSON string representation of a list to a file """
         filename = cls.__name__ + ".json"
         n_list = []
         with open(filename, 'w', encoding='UTF-8') as file:
@@ -35,6 +38,7 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
+        """ returns the list of the JSON string representation"""
         if json_string is None or len(json_string) == 0:
             return "[]"
         else:
@@ -42,6 +46,7 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
         from models.rectangle import Rectangle
         from models.square import Square
         if cls is Rectangle:
@@ -53,6 +58,7 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
+        """returns a list of instances"""
         try:
             list_i = []
             filename = cls.__name__ + ".json"
