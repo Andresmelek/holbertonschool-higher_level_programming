@@ -27,5 +27,6 @@
 | [12-model_state_update_id_2.py]() | Script that changes the name of a State object from the database hbtn_0e_6_usa. |
 | [13-model_state_delete_a.py]() | Script that deletes all State objects with a name containing the letter a from the database hbtn_0e_6_usa. |
 | [14-model_city_fetch_by_state.py]() | Script 14-model_city_fetch_by_state.py that prints all City objects from the database hbtn_0e_14_usa. |
+| [14-model_city_fetch_by_state.sql]() | Databse. |
 | [model_state.py]() | Class definition of a State and an instance Base = declarative_base().|
 | [model_city.py]() | Class definition of a City that inherits from  model_base().|
