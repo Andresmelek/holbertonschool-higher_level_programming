@@ -29,3 +29,4 @@
 | [6-peak.py, 6-peak.txt]() | Function that finds a peak in a list of unsorted integers. |
 | [100-status_code.sh]() | Bash script that sends a request to a URL passed as an argument, and displays only the status code of the response.|
 | [101-post_json.sh]() | Bash script that sends a JSON POST request to a URL passed as the first argument, and displays the body of the response. |
+| [102-catch_me.sh]() | Bash script that makes a request to 0.0.0.0:5000/catch_me that causes the server to respond with a message containing You got me!, in the body of the response.|
