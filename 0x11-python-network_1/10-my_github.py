@@ -8,5 +8,5 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    reque = requests.get("https://api.github.com/user", auth=(argv[1], argv[2]))
-    print(reque.json().get('id'))
+    r = requests.get("https://api.github.com/user", auth=(argv[1], argv[2]))
+    print(r.json().get('id'))
