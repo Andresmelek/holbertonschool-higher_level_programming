@@ -7,9 +7,9 @@ if (process.argv[2] === undefined) {
 }
 
 function factorial (value) {
-  let result = value;
-  for (let i = 1; i < value; i++) {
-    result += i;
+  let result = 1;
+  for (let i = 1; i <= value; i++) {
+    result *= i;
   }
   return result;
 }
