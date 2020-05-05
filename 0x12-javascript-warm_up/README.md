@@ -33,8 +33,8 @@
 | [11-second_biggest.js]() | Script that searches the second biggest integer in the list of arguments.|
 | [12-object.js]() | Script to replace the value 12 with 89. |
 | [13-add.js]() | Function that returns the addition of 2 integers. |
-| []() | |
-| []() | |
-| []() | |
-| []() | |
+| [100-let_me_const.js]() | Modifies the value of myVar to 333. |
+| [101-call_me_moby.js]() | Function that executes x times a function. |
+| [102-add_me_maybe.js]() | Function that increments and calls a function.|
+| [103-object_fct.js]() | Function that increments the integer value.|
 
