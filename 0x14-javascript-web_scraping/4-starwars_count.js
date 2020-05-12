@@ -2,7 +2,7 @@
 
 const argv = process.argv[2];
 const request = require('request');
-const list = [];
+let count = 0;
 
 request(argv, function (error, response, body) {
   if (error) throw error;
@@ -13,9 +13,9 @@ request(argv, function (error, response, body) {
     const characters = index.characters;
     for (const actor in characters) {
       if (characters[actor].includes('18')) {
-        list.push(actor);
+        count++;
       }
     }
   });
-  console.log(list.length);
+  console.log(count);
 });
