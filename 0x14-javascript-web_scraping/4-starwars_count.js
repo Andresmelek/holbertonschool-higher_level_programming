@@ -12,7 +12,9 @@ request(argv, function (error, response, body) {
   results.forEach(index => {
     const characters = index.characters;
     for (const actor in characters) {
-      if (actor.includes('18')) list.push(actor);
+      if (characters[actor].includes('18')) {
+        list.push(actor);
+      }
     }
   });
   console.log(list.length);
